@@ -1,0 +1,381 @@
+text,label
+19+74-99,math
+what is 19 + 74,math
+calculate (19+74)*3,math
+65-99*59,math
+what is 65 - 99,math
+calculate (65+99)*8,math
+28+14-64,math
+what is 28 + 14,math
+calculate (28+14)*8,math
+79*99-2,math
+what is 79 * 99,math
+calculate (79+99)*6,math
+94+31-77,math
+what is 94 + 31,math
+calculate (94+31)*2,math
+4*5+85,math
+what is 4 * 5,math
+calculate (4+5)*8,math
+89*29+56,math
+what is 89 * 29,math
+calculate (89+29)*5,math
+99*58+65,math
+what is 99 * 58,math
+calculate (99+58)*7,math
+31-88-30,math
+what is 31 - 88,math
+calculate (31+88)*2,math
+55+73+84,math
+what is 55 + 73,math
+calculate (55+73)*6,math
+17*97*44,math
+what is 17 * 97,math
+calculate (17+97)*8,math
+66-87-26,math
+what is 66 - 87,math
+calculate (66+87)*9,math
+66+52-77,math
+what is 66 + 52,math
+calculate (66+52)*5,math
+97*53+55,math
+what is 97 * 53,math
+calculate (97+53)*7,math
+72*91-88,math
+what is 72 * 91,math
+calculate (72+91)*3,math
+58+86+67,math
+what is 58 + 86,math
+calculate (58+86)*8,math
+49+64-95,math
+what is 49 + 64,math
+calculate (49+64)*2,math
+41*92*80,math
+what is 41 * 92,math
+calculate (41+92)*8,math
+84*23+23,math
+what is 84 * 23,math
+calculate (84+23)*2,math
+27+71-72,math
+what is 27 + 71,math
+calculate (27+71)*7,math
+75-47*60,math
+what is 75 - 47,math
+calculate (75+47)*2,math
+51+96*67,math
+what is 51 + 96,math
+calculate (51+96)*5,math
+56-9*63,math
+what is 56 - 9,math
+calculate (56+9)*5,math
+66-54-64,math
+what is 66 - 54,math
+calculate (66+54)*7,math
+2*70*71,math
+what is 2 * 70,math
+calculate (2+70)*7,math
+60+78*5,math
+what is 60 + 78,math
+calculate (60+78)*4,math
+72+76*25,math
+what is 72 + 76,math
+calculate (72+76)*6,math
+6+88+11,math
+what is 6 + 88,math
+calculate (6+88)*9,math
+3-98+98,math
+what is 3 - 98,math
+calculate (3+98)*6,math
+16-81-25,math
+what is 16 - 81,math
+calculate (16+81)*3,math
+23*22+34,math
+what is 23 * 22,math
+calculate (23+22)*6,math
+84-93*39,math
+what is 84 - 93,math
+calculate (84+93)*7,math
+65+62-16,math
+what is 65 + 62,math
+calculate (65+62)*8,math
+45-55+26,math
+what is 45 - 55,math
+calculate (45+55)*6,math
+95*67-28,math
+what is 95 * 67,math
+calculate (95+67)*2,math
+30+4+52,math
+what is 30 + 4,math
+calculate (30+4)*4,math
+59*92-66,math
+what is 59 * 92,math
+calculate (59+92)*5,math
+82-90+68,math
+what is 82 - 90,math
+calculate (82+90)*2,math
+52-88*75,math
+what is 52 - 88,math
+calculate (52+88)*8,math
+9+96+40,math
+what is 9 + 96,math
+calculate (9+96)*2,math
+41-11-11,math
+what is 41 - 11,math
+calculate (41+11)*4,math
+55+74+34,math
+what is 55 + 74,math
+calculate (55+74)*2,math
+77-29+74,math
+what is 77 - 29,math
+calculate (77+29)*2,math
+50+27+46,math
+what is 50 + 27,math
+calculate (50+27)*8,math
+77+26*65,math
+what is 77 + 26,math
+calculate (77+26)*8,math
+39+66-65,math
+what is 39 + 66,math
+calculate (39+66)*8,math
+38+4-22,math
+what is 38 + 4,math
+calculate (38+4)*4,math
+45-56*29,math
+what is 45 - 56,math
+calculate (45+56)*3,math
+50*72*46,math
+what is 50 * 72,math
+calculate (50+72)*9,math
+70*32+10,math
+what is 70 * 32,math
+calculate (70+32)*3,math
+19*23+23,math
+what is 19 * 23,math
+calculate (19+23)*6,math
+99*44-78,math
+what is 99 * 44,math
+calculate (99+44)*7,math
+45-45+16,math
+what is 45 - 45,math
+calculate (45+45)*9,math
+19+76-72,math
+what is 19 + 76,math
+calculate (19+76)*2,math
+54+11+50,math
+what is 54 + 11,math
+calculate (54+11)*7,math
+16-80+77,math
+what is 16 - 80,math
+calculate (16+80)*5,math
+74-12-36,math
+what is 74 - 12,math
+calculate (74+12)*3,math
+60+37-15,math
+what is 60 + 37,math
+calculate (60+37)*2,math
+80+87-3,math
+what is 80 + 87,math
+calculate (80+87)*3,math
+7*26-32,math
+what is 7 * 26,math
+calculate (7+26)*4,math
+10 percent of 250,math
+what is 10% of 105,math
+15 percent of 101,math
+what is 15% of 400,math
+10 percent of 242,math
+what is 10% of 486,math
+30 percent of 432,math
+what is 30% of 297,math
+20 percent of 301,math
+what is 20% of 149,math
+40 percent of 181,math
+what is 40% of 71,math
+15 percent of 353,math
+what is 15% of 182,math
+5 percent of 33,math
+what is 5% of 25,math
+20 percent of 391,math
+what is 20% of 325,math
+25 percent of 250,math
+what is 25% of 220,math
+25 percent of 224,math
+what is 25% of 52,math
+10 percent of 487,math
+what is 10% of 182,math
+40 percent of 77,math
+what is 40% of 148,math
+15 percent of 421,math
+what is 15% of 336,math
+50 percent of 464,math
+what is 50% of 372,math
+40 percent of 358,math
+what is 40% of 202,math
+20 percent of 113,math
+what is 20% of 297,math
+15 percent of 177,math
+what is 15% of 121,math
+15 percent of 204,math
+what is 15% of 61,math
+20 percent of 65,math
+what is 20% of 405,math
+40 percent of 66,math
+what is 40% of 353,math
+25 percent of 136,math
+what is 25% of 219,math
+20 percent of 41,math
+what is 20% of 187,math
+12 percent of 182,math
+what is 12% of 425,math
+20 percent of 145,math
+what is 20% of 191,math
+10 percent of 298,math
+what is 10% of 333,math
+10 percent of 145,math
+what is 10% of 132,math
+5 percent of 433,math
+what is 5% of 144,math
+30 percent of 57,math
+what is 30% of 157,math
+50 percent of 464,math
+what is 50% of 56,math
+10 percent of 31,math
+what is 10% of 345,math
+5 percent of 168,math
+what is 5% of 404,math
+25 percent of 272,math
+what is 25% of 260,math
+12 percent of 71,math
+what is 12% of 276,math
+25 percent of 59,math
+what is 25% of 280,math
+12 percent of 111,math
+what is 12% of 417,math
+12 percent of 92,math
+what is 12% of 440,math
+25 percent of 176,math
+what is 25% of 74,math
+50 percent of 447,math
+what is 50% of 490,math
+20 percent of 84,math
+what is 20% of 477,math
+solve 5x + 5 = 54,math
+5x+5=54,math
+find x if 5x - 5 = 54,math
+solve 2x + 11 = 59,math
+2x+11=59,math
+find x if 2x - 11 = 59,math
+solve 5x + 6 = 39,math
+5x+6=39,math
+find x if 5x - 6 = 39,math
+solve 8x + 18 = 30,math
+8x+18=30,math
+find x if 8x - 18 = 30,math
+solve 2x + 8 = 36,math
+2x+8=36,math
+find x if 2x - 8 = 36,math
+solve 3x + 15 = 47,math
+3x+15=47,math
+find x if 3x - 15 = 47,math
+solve 6x + 18 = 48,math
+6x+18=48,math
+find x if 6x - 18 = 48,math
+solve 9x + 1 = 45,math
+9x+1=45,math
+find x if 9x - 1 = 45,math
+solve 7x + 6 = 36,math
+7x+6=36,math
+find x if 7x - 6 = 36,math
+solve 9x + 1 = 46,math
+9x+1=46,math
+find x if 9x - 1 = 46,math
+solve 2x + 2 = 42,math
+2x+2=42,math
+find x if 2x - 2 = 42,math
+solve 4x + 19 = 28,math
+4x+19=28,math
+find x if 4x - 19 = 28,math
+solve 4x + 9 = 37,math
+4x+9=37,math
+find x if 4x - 9 = 37,math
+solve 8x + 19 = 45,math
+8x+19=45,math
+find x if 8x - 19 = 45,math
+solve 4x + 20 = 25,math
+4x+20=25,math
+find x if 4x - 20 = 25,math
+solve 5x + 16 = 20,math
+5x+16=20,math
+find x if 5x - 16 = 20,math
+solve 4x + 17 = 40,math
+4x+17=40,math
+find x if 4x - 17 = 40,math
+solve 9x + 8 = 35,math
+9x+8=35,math
+find x if 9x - 8 = 35,math
+solve 7x + 16 = 50,math
+7x+16=50,math
+find x if 7x - 16 = 50,math
+solve 5x + 14 = 41,math
+5x+14=41,math
+find x if 5x - 14 = 41,math
+solve 6x + 8 = 23,math
+6x+8=23,math
+find x if 6x - 8 = 23,math
+solve 3x + 17 = 43,math
+3x+17=43,math
+find x if 3x - 17 = 43,math
+solve 4x + 17 = 33,math
+4x+17=33,math
+find x if 4x - 17 = 33,math
+solve 6x + 10 = 39,math
+6x+10=39,math
+find x if 6x - 10 = 39,math
+solve 7x + 6 = 49,math
+7x+6=49,math
+find x if 7x - 6 = 49,math
+solve 3x + 4 = 58,math
+3x+4=58,math
+find x if 3x - 4 = 58,math
+solve 8x + 6 = 29,math
+8x+6=29,math
+find x if 8x - 6 = 29,math
+solve 6x + 14 = 33,math
+6x+14=33,math
+find x if 6x - 14 = 33,math
+solve 2x + 16 = 45,math
+2x+16=45,math
+find x if 2x - 16 = 45,math
+solve 7x + 13 = 52,math
+7x+13=52,math
+find x if 7x - 13 = 52,math
+solve 4x + 18 = 22,math
+4x+18=22,math
+find x if 4x - 18 = 22,math
+solve 3x + 9 = 60,math
+3x+9=60,math
+find x if 3x - 9 = 60,math
+solve 3x + 9 = 25,math
+3x+9=25,math
+find x if 3x - 9 = 25,math
+solve 4x + 20 = 25,math
+4x+20=25,math
+find x if 4x - 20 = 25,math
+solve 9x + 8 = 44,math
+9x+8=44,math
+find x if 9x - 8 = 44,math
+solve 8x + 13 = 30,math
+8x+13=30,math
+find x if 8x - 13 = 30,math
+solve 7x + 15 = 28,math
+7x+15=28,math
+find x if 7x - 15 = 28,math
+solve 9x + 7 = 27,math
+9x+7=27,math
+find x if 9x - 7 = 27,math
+solve 8x + 20 = 54,math
+8x+20=54,math
+find x if 8x - 20 = 54,math
+solve 8x + 4 = 38,math
+8x+4=38,math
+find x if 8x - 4 = 38,math
