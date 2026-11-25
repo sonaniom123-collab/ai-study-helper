@@ -3,6 +3,7 @@ from markupsafe import escape
 from core.code_templates import get_code
 from core.intent import detect_language, predict_operation
 from core.math_solver import solve
+from core.programs import find_program, get_program
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
 CODE_WORDS = ("program", "code", "java", "python", "c++", "write", "function", "pattern")
@@ -38,6 +39,14 @@ def go():
         steps = solve(q)
         if steps:
             return math_page(steps)
+        program = find_program(q)
+        if program:
+            language = detect_language(q)
+            result = get_program(program, language)
+            return (
+                f"<p>Detected: <b>{escape(program)}</b> program in <b>{escape(language)}</b></p>"
+                f"<pre>{escape(result)}</pre><a href='/'>Back</a>"
+            )
     label = predict_operation(q)
     if label == "math":
         steps = solve(q)
