@@ -2,7 +2,7 @@
 
 A small AI tool built in Python. In one box, a student can ask for a basic program (C, C++, Java, Python) or a school math problem (class 1 to 8), by typing it or by uploading a photo. Everything runs on a laptop, with no outside AI service and no API key.
 
-Built by Om Sonani, B.Tech 5th semester, YOUR COLLEGE NAME.
+Built by Om Sonani, B.Tech 5th semester, SSASIT(GTU),SURAT.
 
 ## Screenshots
 
