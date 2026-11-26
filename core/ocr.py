@@ -1,7 +1,14 @@
+import os
+import shutil
+
 import pytesseract
 from PIL import Image, ImageOps, ImageStat
 
-pytesseract.pytesseract.tesseract_cmd = r"E:\Tesseract-OCR\tesseract.exe"
+_WINDOWS_PATH = r"E:\Tesseract-OCR\tesseract.exe"
+if os.path.exists(_WINDOWS_PATH):
+    pytesseract.pytesseract.tesseract_cmd = _WINDOWS_PATH
+else:
+    pytesseract.pytesseract.tesseract_cmd = shutil.which("tesseract") or "tesseract"
 
 
 def _prepare(img):

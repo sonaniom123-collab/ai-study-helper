@@ -11,7 +11,7 @@ PAGE = """
 <h2>AI Study Helper</h2>
 <p>Ask for a program or a math problem, in one box.</p>
 <form action="/go" method="get">
-  <input name="q" size="60" placeholder="e.g. multiply two numbers in java   or   1/2 + 1/3   or   area of circle radius 7">
+  <input name="q" size="60" placeholder="e.g. multiply two numbers in java   or   factorial in c   or   1/2 + 1/3">
   <button type="submit">Ask</button>
 </form>
 <h3>Or upload a photo of a math problem</h3>
@@ -39,14 +39,14 @@ def go():
         steps = solve(q)
         if steps:
             return math_page(steps)
-        program = find_program(q)
-        if program:
-            language = detect_language(q)
-            result = get_program(program, language)
-            return (
-                f"<p>Detected: <b>{escape(program)}</b> program in <b>{escape(language)}</b></p>"
-                f"<pre>{escape(result)}</pre><a href='/'>Back</a>"
-            )
+    program = find_program(q)
+    if program:
+        language = detect_language(q)
+        result = get_program(program, language)
+        return (
+            f"<p>Detected: <b>{escape(program)}</b> program in <b>{escape(language)}</b></p>"
+            f"<pre>{escape(result)}</pre><a href='/'>Back</a>"
+        )
     label = predict_operation(q)
     if label == "math":
         steps = solve(q)
