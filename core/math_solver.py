@@ -1,14 +1,17 @@
 import ast
 import re
 from math import gcd
+
 from sympy import Poly, Rational, Symbol
 from sympy.parsing.sympy_parser import (
     implicit_multiplication_application,
     parse_expr,
     standard_transformations,
 )
+
 x = Symbol("x")
 TRANSFORMS = standard_transformations + (implicit_multiplication_application,)
+
 OPS = {
     ast.Add: lambda a, b: a + b,
     ast.Sub: lambda a, b: a - b,
@@ -16,16 +19,22 @@ OPS = {
     ast.Div: lambda a, b: a / b,
 }
 SYMBOL = {ast.Add: "+", ast.Sub: "-", ast.Mult: "×", ast.Div: "÷"}
+
+
 def fmt(n):
     n = float(n)
     if n == int(n):
         return str(int(n))
     return f"{n:.4f}".rstrip("0").rstrip(".")
+
+
 def show(v):
     v = Rational(v)
     if v.is_Integer:
         return str(v)
     return f"{v} (= {fmt(v)})"
+
+
 class _FoldSign(ast.NodeTransformer):
     def visit_UnaryOp(self, node):
         self.generic_visit(node)
@@ -33,6 +42,8 @@ class _FoldSign(ast.NodeTransformer):
             v = node.operand.value
             return ast.Constant(-v if isinstance(node.op, ast.USub) else v)
         return node
+
+
 def _reduce_once(node):
     if isinstance(node, ast.BinOp):
         if type(node.op) not in OPS:
@@ -66,6 +77,8 @@ def _reduce_once(node):
             node.operand = res[0]
             return node, res[1]
     return None
+
+
 def solve_arithmetic(expr):
     try:
         tree = ast.parse(expr, mode="eval")
@@ -88,6 +101,8 @@ def solve_arithmetic(expr):
         return ["You cannot divide by zero."]
     except (SyntaxError, ValueError, TypeError):
         return None
+
+
 def solve_percentage(p, n):
     p, n = Rational(p), Rational(n)
     return [
@@ -96,6 +111,8 @@ def solve_percentage(p, n):
         f"Step 2: divide {fmt(p * n)} ÷ 100 = {fmt(p * n / 100)}",
         f"Answer: {fmt(p * n / 100)}",
     ]
+
+
 def solve_equation(text):
     try:
         left, right = text.split("=", 1)
@@ -115,17 +132,28 @@ def solve_equation(text):
         f"Answer: x = {show(sol)}",
         f"Check: left side = {show(lhs.subs(x, sol))}, right side = {show(rhs.subs(x, sol))}",
     ]
+
+
 # ---------- fractions ----------
+
 FRACTION = re.compile(r"(\d+)\s*/\s*(\d+)\s*([+\-*/])\s*(\d+)\s*/\s*(\d+)")
+
+
 def _lcm(a, b):
     return a * b // gcd(a, b)
+
+
 def _simplify_step(n, d):
     g = gcd(abs(n), d)
     if g > 1:
         return n // g, d // g, f"Simplify: divide top and bottom by {g}: {n}/{d} = {_frac_text(n // g, d // g)}"
     return n, d, None
+
+
 def _frac_text(n, d):
     return str(n) if d == 1 else f"{n}/{d}"
+
+
 def solve_fraction(a, b, op, c, d):
     if b == 0 or d == 0:
         return ["A fraction cannot have 0 as its bottom number."]
@@ -161,17 +189,25 @@ def solve_fraction(a, b, op, c, d):
     else:
         steps.append(f"Answer: {n2_}/{d2_} (= {fmt(n2_ / d2_)})")
     return steps
+
+
 # ---------- area and perimeter ----------
+
 NUM = re.compile(r"\d+(?:\.\d+)?")
 PI = 3.14
+
+
 def _nums(t):
     return [float(v) for v in NUM.findall(t)]
+
+
 def solve_geometry(t):
     nums = _nums(t)
     want_area = "area" in t
     want_perimeter = "perimeter" in t or "circumference" in t
     if not (want_area or want_perimeter):
         return None
+
     if "rectangle" in t:
         if len(nums) < 2:
             return ["Please give the length and the width, for example: area of rectangle length 5 width 3"]
@@ -186,6 +222,7 @@ def solve_geometry(t):
                 f"Step 1: {fmt(l)} + {fmt(w)} = {fmt(l + w)}",
                 f"Step 2: 2 × {fmt(l + w)} = {fmt(2 * (l + w))}",
                 f"Answer: perimeter = {fmt(2 * (l + w))} units"]
+
     if "square" in t:
         if len(nums) < 1:
             return ["Please give the side, for example: area of square side 4"]
@@ -199,6 +236,7 @@ def solve_geometry(t):
                 "Formula: perimeter = 4 × side",
                 f"Step 1: 4 × {fmt(s)} = {fmt(4 * s)}",
                 f"Answer: perimeter = {fmt(4 * s)} units"]
+
     if "circle" in t:
         if len(nums) < 1:
             return ["Please give the radius, for example: area of circle radius 7"]
@@ -220,6 +258,7 @@ def solve_geometry(t):
                       f"Step 2: 6.28 × {fmt(r)} = {fmt(2 * PI * r)}",
                       f"Answer: circumference = {fmt(2 * PI * r)} units"]
         return steps
+
     if "triangle" in t:
         if want_area:
             if len(nums) < 2:
@@ -237,9 +276,14 @@ def solve_geometry(t):
                 "Formula: perimeter = sum of all three sides",
                 f"Step 1: {fmt(a_)} + {fmt(b_)} + {fmt(c_)} = {fmt(a_ + b_ + c_)}",
                 f"Answer: perimeter = {fmt(a_ + b_ + c_)} units"]
+
     return ["I can do area and perimeter of a rectangle, square, circle and triangle."]
+
+
 # ---------- main entry ----------
+
 PERCENT = re.compile(r"(\d+(?:\.\d+)?)\s*(?:%|percent|per cent)\s*(?:of)?\s*(\d+(?:\.\d+)?)", re.I)
+
 WORD_OPS = [
     (r"\bmultiplied\s+by\b", " * "),
     (r"\bdivided\s+by\b", " / "),
@@ -247,38 +291,58 @@ WORD_OPS = [
     (r"\bminus\b", " - "),
     (r"\btimes\b", " * "),
 ]
+
+
 def words_to_symbols(t):
     for pattern, symbol in WORD_OPS:
         t = re.sub(pattern, symbol, t)
     return t
+
+
 LEADING_NUMBER = re.compile(r"^\s*(?:q(?:uestion)?\.?\s*)?\d+\s*[.)]\s+", re.I)
+
+
 def clean_problem(text):
     text = LEADING_NUMBER.sub("", text.strip())
+    text = re.sub(r"\s*=\s*[?%]*\s*$", "", text)
     text = re.sub(r"[=?\s]+$", "", text)
     return text
+
+
 def solve(text):
     text = clean_problem(text)
     t = text.lower().replace("×", "*").replace("÷", "/")
     t = words_to_symbols(t)
+
     if "=" in t:
         m = re.search(r"[0-9x+\-*/(). ]+=[0-9x+\-*/(). ]+", t)
         return solve_equation(m.group().strip()) if m else None
+
     m = PERCENT.search(t)
     if m:
         return solve_percentage(m.group(1), m.group(2))
+
     geo = solve_geometry(t)
     if geo:
         return geo
+
     m = FRACTION.search(t)
     if m:
         a, b, op, c, d = int(m.group(1)), int(m.group(2)), m.group(3), int(m.group(4)), int(m.group(5))
         return solve_fraction(a, b, op, c, d)
-    t = re.sub(r"(?<=\d)\s*x\s*(?=\d)", "*", t)
+
+    t = re.sub(r"(?<=[\d)])\s*x\s*(?=[\d(])", "*", t)
     candidates = [c.strip().rstrip(". ") for c in re.findall(r"[\d(][\d+\-*/().\s]*", t)]
     candidates = [c for c in candidates if re.search(r"[+\-*/]", c)]
     if not candidates:
         return None
-    return solve_arithmetic(max(candidates, key=len))
+    best = max(candidates, key=len)
+    leftover = t.replace(best, " ", 1)
+    if re.search(r"[\d%=]", leftover):
+        return None
+    return solve_arithmetic(best)
+
+
 if __name__ == "__main__":
     tests = [
         "12+35*2", "what is (2+3)*4", "25 percent of 200", "2x + 3 = 11", "7/2",
